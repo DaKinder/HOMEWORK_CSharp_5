@@ -89,32 +89,32 @@ System.Console.WriteLine("======================================================
 //Задача 38: Задайте массив вещественных чисел. ыва 
 //Найдите разницу между максимальным и минимальным элементов массива.
 
-decimal[] FillArr()
+double[] FillArr()
 {
-    decimal[] arr = new decimal[10];
+    double[] arr = new double[10];
     
     for (int i = 0; i < arr.Length; i++)
-        arr[i] = Convert.ToDecimal(new Random().Next(-10, 11) + Math.Round(new Random().NextDouble(), 2));
+        arr[i] = Math.Round(new Random().Next(-10, 11) + new Random().NextDouble(), 2);
     return arr;
 }
 
-decimal FindMin(decimal[] arr)
+double FindMin(double[] arr)
 {
-    decimal min = arr[0];
+    double min = arr[0];
     for(int i = 0; i < arr.Length; i++)
         if(arr[i] < min) min = arr[i];
     return min;
 }
 
-decimal FindMax(decimal[] arr)
+double FindMax(double[] arr)
 {
-    decimal max = arr[0];
+    double max = arr[0];
     for(int i = 0; i < arr.Length; i++)
         if(arr[i] > max) max = arr[i];
     return max;
 }
 
-void PrintArr(decimal[] arr)
+void PrintArr(double[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
@@ -123,7 +123,7 @@ void PrintArr(decimal[] arr)
     Console.WriteLine();
 }
 
-decimal []arr = FillArr();
+double []arr = FillArr();
 PrintArr(arr);
-System.Console.WriteLine($"Разница между {FindMin(arr)} и {FindMax(arr)} = {FindMax(arr) - FindMin(arr)}; ");
-System.Console.WriteLine("============================================================================");
+Console.WriteLine($"Разница между {FindMin(arr)} и {FindMax(arr)} = {Math.Round(FindMax(arr) - FindMin(arr), 2)}");
+
