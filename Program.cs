@@ -3,76 +3,86 @@
 
 int[] CreateArray()
 {
-    int[] arr = new int[5];
-    for (int i = 0; i < arr.Length; i++)
+    int[] myArray = new int[5];
+    for (int i = 0; i < myArray.Length; i++)
     {
-        arr[i] = new Random().Next(100, 1000);
+        myArray[i] = new Random().Next(100, 1000);
     }
-    return arr;
+    return myArray;
 }
 
-void PrintArray(int[] arr)
+void PrintArray(int[] myArray)
 {
-    for (int i = 0; i < arr.Length; i++)
+    for (int i = 0; i < myArray.Length; i++)
     {
-        Console.Write($"{arr[i]} ");
+        Console.Write($"[{myArray[i]}] ");
     }
     Console.WriteLine();
 }
 
-int CountNumbers(int[] arr)
+int CountEvenNumbers(int[] myArray)
 {
     int evenCounter = 0;
-    for (int i = 0; i < arr.Length; i++)
+    for (int i = 0; i < myArray.Length; i++)
     {
-        if (arr[i] % 2 == 0) evenCounter += 1;
+        if (myArray[i] % 2 == 0) evenCounter += 1;
     }
     return evenCounter;
 }
 
+int[] myArray = CreateArray();
+PrintArray(myArray);
+Console.WriteLine($"Количество чётных чисел массива = {CountEvenNumbers(myArray)}");
+System.Console.WriteLine("=================================================");
 
-int[] arr = CreateArray();
-PrintArray(arr);
-Console.WriteLine($"Количество чётных чисел массива = {CountNumbers(arr)}");
-System.Console.WriteLine();
+
+
+
+
+
 //Задача 36: Задайте одномерный массив, заполненный случайными числами.
 //Найдите сумму элементов, стоящих на нечётных позициях.
 
 int[] FillArray()
 {
-    int[] arr = new int[10];
-    for (int i = 0; i < arr.Length; i++)
+    int[] array = new int[10];
+    for (int i = 0; i < array.Length; i++)
     {
-        arr[i] = new Random().Next(0, 100);
+        array[i] = new Random().Next(0, 100);
     }
-    return arr;
+    return array;
 }
 
-int OddCounter(int[] arr)
+int OddCounter(int[] array)
 {
     int sum = 0;
-    for (int i = 1; i < arr.Length; i += 2)
+    for (int i = 1; i < array.Length; i += 2)
     {
-        sum = sum + arr[i];
+        sum = sum + array[i];
     }
     return sum;
 }
 
-void PrintArray1(int[] arr)
+void PrintArray1(int[] array)
 {
-    for (int i = 0; i < arr.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        Console.Write($"{arr[i]} ");
+        Console.Write($"[{array[i]}] ");
     }
     Console.WriteLine();
 }
 
-arr = FillArray();
-PrintArray1(arr);
+int[]array = FillArray();
+PrintArray1(array);
 
-int sum = OddCounter(arr);
+int sum = OddCounter(array);
 System.Console.WriteLine($"Сумма элементов нечётных позиций = {sum}");
-System.Console.WriteLine();
+System.Console.WriteLine("============================================================================");
+
+
+
+
+
 
 //Задача 38: Задайте массив вещественных чисел. ыва 
 //Найдите разницу между максимальным и минимальным элементов массива.
@@ -81,18 +91,15 @@ decimal[] FillArrays()
 {
     decimal[] arr = new decimal[10];
     for (int i = 0; i < arr.Length; i++)
-    {
         arr[i] = Convert.ToDecimal(new Random().Next(-10, 10) + Math.Round(new Random().NextDouble(), 2));
-    }
     return arr;
 }
+
 decimal FindMin(decimal[] arr)
 {
     decimal min = arr[0];
     for(int i = 0; i < arr.Length; i++)
-    {
         if(arr[i] < min) min = arr[i];
-    }
     return min;
 }
 
@@ -100,9 +107,7 @@ decimal FindMax(decimal[] arr)
 {
     decimal max = arr[0];
     for(int i = 0; i < arr.Length; i++)
-    {
         if(arr[i] > max) max = arr[i];
-    }
     return max;
 }
 
@@ -110,12 +115,12 @@ void PrintArray2(decimal[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write($"{arr[i]} ");
+        Console.Write($"[{arr[i]}] ");
     }
     Console.WriteLine();
 }
 
-decimal [] arrr = FillArrays();
-PrintArray2(arrr);
-decimal result = FindMax(arrr) - FindMin(arrr);
-System.Console.WriteLine($"Разница между {FindMin(arrr)} и {FindMax(arrr)} = {result}; ");
+decimal [] arr = FillArrays();
+PrintArray2(arr);
+System.Console.WriteLine($"Разница между {FindMin(arr)} и {FindMax(arr)} = {FindMax(arr) - FindMin(arr)}; ");
+System.Console.WriteLine("============================================================================");
