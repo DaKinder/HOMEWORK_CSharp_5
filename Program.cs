@@ -4,6 +4,7 @@
 int[] CreateArray()
 {
     int[] myArray = new int[5];
+
     for (int i = 0; i < myArray.Length; i++)
     {
         myArray[i] = new Random().Next(100, 1000);
@@ -11,7 +12,7 @@ int[] CreateArray()
     return myArray;
 }
 
-void PrintArray(int[] myArray)
+void PrintMyArray(int[] myArray)
 {
     for (int i = 0; i < myArray.Length; i++)
     {
@@ -31,7 +32,7 @@ int CountEvenNumbers(int[] myArray)
 }
 
 int[] myArray = CreateArray();
-PrintArray(myArray);
+PrintMyArray(myArray);
 Console.WriteLine($"Количество чётных чисел массива = {CountEvenNumbers(myArray)}");
 System.Console.WriteLine("=================================================");
 
@@ -46,9 +47,10 @@ System.Console.WriteLine("=================================================");
 int[] FillArray()
 {
     int[] array = new int[10];
+
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(0, 100);
+        array[i] = new Random().Next(10, 100);
     }
     return array;
 }
@@ -63,7 +65,7 @@ int OddCounter(int[] array)
     return sum;
 }
 
-void PrintArray1(int[] array)
+void PrintArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -73,7 +75,7 @@ void PrintArray1(int[] array)
 }
 
 int[]array = FillArray();
-PrintArray1(array);
+PrintArray(array);
 
 int sum = OddCounter(array);
 System.Console.WriteLine($"Сумма элементов нечётных позиций = {sum}");
@@ -87,11 +89,12 @@ System.Console.WriteLine("======================================================
 //Задача 38: Задайте массив вещественных чисел. ыва 
 //Найдите разницу между максимальным и минимальным элементов массива.
 
-decimal[] FillArrays()
+decimal[] FillArr()
 {
     decimal[] arr = new decimal[10];
+    
     for (int i = 0; i < arr.Length; i++)
-        arr[i] = Convert.ToDecimal(new Random().Next(-10, 10) + Math.Round(new Random().NextDouble(), 2));
+        arr[i] = Convert.ToDecimal(new Random().Next(-10, 11) + Math.Round(new Random().NextDouble(), 2));
     return arr;
 }
 
@@ -111,7 +114,7 @@ decimal FindMax(decimal[] arr)
     return max;
 }
 
-void PrintArray2(decimal[] arr)
+void PrintArr(decimal[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
@@ -120,7 +123,7 @@ void PrintArray2(decimal[] arr)
     Console.WriteLine();
 }
 
-decimal [] arr = FillArrays();
-PrintArray2(arr);
+decimal []arr = FillArr();
+PrintArr(arr);
 System.Console.WriteLine($"Разница между {FindMin(arr)} и {FindMax(arr)} = {FindMax(arr) - FindMin(arr)}; ");
 System.Console.WriteLine("============================================================================");
